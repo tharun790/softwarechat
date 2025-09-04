@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser } from "../utils/userSlice";
 import axios from "axios";
-import { use } from "react";
 
 
 const Body = () => {
@@ -25,7 +24,7 @@ const Body = () => {
 
     }
     catch(err){
-      if(err.status === 401){
+      if(err.response?.status === 401){
         Navigate("/login");
       }
       console.log(err);

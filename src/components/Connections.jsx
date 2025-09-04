@@ -22,9 +22,9 @@ const Connections = () => {
     fetchConnections();
   }, []);
 
-  if (!connections) return;
+  if (!connections) return <div className="flex justify-center my-10">Loading...</div>;
 
-  if (connections.length === 0) return <h1> No Connections Found</h1>;
+  if (!Array.isArray(connections) || connections.length === 0) return <h1 className="flex justify-center my-10"> No Connections Found</h1>;
 
   return (
     <div className="text-center my-10">

@@ -32,7 +32,9 @@ const Requests = () => {
     fetchRequests();
   }, []);
 
-if (!requests || requests.length === 0)
+if (!requests) return <div className="flex justify-center my-10">Loading...</div>;
+
+if (!Array.isArray(requests) || requests.length === 0)
     return (
         <div className="flex  justify-center h-screen">
             <h1 className="text-white text-2xl font-semibold my-8">
